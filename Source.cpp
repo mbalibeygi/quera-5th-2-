@@ -48,11 +48,34 @@ public:
 	long long int calculate_volume() {
 		return (l * b * h);
 	}
+
+	bool less(Box input) {
+/*		if (l < input.l || l == input.l && b < input.b || l == input.l && b = input.b && h < input.h) {
+			return 1;
+		}*/
+	}
+
+	bool less(Box input) {
+		if (l < input.l) {
+			return true;
+		}
+
+		if (b < input.b && l == input.l) {
+			return true;
+		}
+
+		if (h < input.h && b == input.b && l == imput.l) {
+			return true;
+		}
+
+		return false;
+	}
+
+	void show() {
+		cout << l << ' ' << b << ' ' << h << endl;
+	}
 };
 
 int main() {
-	Box box1, box2(1, 2, 3);
-
-	cout << box1.get_breadth() << endl;
-	cout << box2.get_breadth() << endl;
+	
 }
